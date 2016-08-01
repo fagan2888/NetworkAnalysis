@@ -4,18 +4,14 @@ import seaborn as sns
 
 
 def get_circular_dg():
-    '''
+    """
     Creates a directed graph with 20 integer nodes.
     Every even interger node is connected to the next odd integer node.
-
-    Parameters
-    ---------
-    None
 
     Returns
     -------
     A networkx.Digraph instance.
-    '''
+    """
 
     dg = nx.DiGraph()
     dg.add_nodes_from(range(20))
@@ -26,7 +22,7 @@ def get_circular_dg():
 
 
 def draw_circular_dg(dg):
-    '''
+    """
     Draws a directed graph.
 
     Parameters
@@ -36,7 +32,7 @@ def draw_circular_dg(dg):
     Returns
     -------
     A matplotlib.Axes instance.
-    '''
+    """
 
     ax = plt.gca()
 
@@ -46,7 +42,7 @@ def draw_circular_dg(dg):
 
 
 def get_multigraph():
-    '''
+    """
     Creates an undirected multigraph with five nodes.
 
     Paramters
@@ -56,7 +52,7 @@ def get_multigraph():
     Returns
     -------
     A networkx.MultiGraph instance.
-    '''
+    """
 
     mg = nx.MultiGraph()
     mg.add_nodes_from(range(5))
@@ -65,7 +61,7 @@ def get_multigraph():
 
 
 def draw_multigraph(mg):
-    '''
+    """
     Draws a multigraph in circular format.
 
     Paramters
@@ -75,7 +71,7 @@ def draw_multigraph(mg):
     Returns
     -------
     A matplotlib.Axes instance.
-    '''
+    """
 
     ax = draw_circular_dg(mg)
 
@@ -83,7 +79,7 @@ def draw_multigraph(mg):
 
 
 def add_edges(mg):
-    '''
+    """
     Adds new edges between all even integer nodes (0, 2, 4)
     and between all odd integer nodes (1, 3).
 
@@ -94,7 +90,7 @@ def add_edges(mg):
     Returns
     -------
     A matplotlib.Axes instance.
-    '''
+    """
 
     mg.add_edge(0, 2)
     mg.add_edge(4, 0)
@@ -105,7 +101,7 @@ def add_edges(mg):
 
 
 def draw_graph(graph):
-    '''
+    """
     Draws the social network of Zachary's Karate club.
 
     Paramters
@@ -115,7 +111,7 @@ def draw_graph(graph):
     Returns
     -------
     A matplotlib.Axes instance.
-    '''
+    """
 
     ax = plt.gca()
 
@@ -125,7 +121,7 @@ def draw_graph(graph):
 
 
 def get_degree(graph):
-    '''
+    """
     Computes the degree of each node.
 
     Paramters
@@ -135,7 +131,7 @@ def get_degree(graph):
     Returns
     -------
     A dict of foramt {node: degree}
-    '''
+    """
 
     result = dict()
 
@@ -146,7 +142,7 @@ def get_degree(graph):
 
 
 def draw_graph_friends(graph):
-    '''
+    """
     Draws the social network of Zachary's Karate club,
     but uses different colors for friends of node 0 and node 33.
 
@@ -157,7 +153,7 @@ def draw_graph_friends(graph):
     Returns
     -------
     A matplotlib.Axes instance.
-    '''
+    """
 
     ax = plt.gca()
 
@@ -180,7 +176,7 @@ def draw_graph_friends(graph):
 
 
 def draw_graph_split(graph):
-    '''
+    """
     Draws the social network of Zachary's Karate club,
     but uses different colors for two subgroups after the breakup.
 
@@ -191,7 +187,7 @@ def draw_graph_split(graph):
     Returns
     -------
     A matplotlib.Axes instance.
-    '''
+    """
 
     ax = plt.gca()
 
@@ -214,7 +210,7 @@ def draw_graph_split(graph):
 
 
 def create_digraph(ids2ids, start_node='348785149'):
-    '''
+    """
     Creates a graph of friends of friends for the initial user 'start_node'.
 
     Paramters
@@ -224,7 +220,7 @@ def create_digraph(ids2ids, start_node='348785149'):
     Returns
     -------
     A networkx.DiGraph instance.
-    '''
+    """
 
     dg = nx.DiGraph()
     dg.add_node(start_node)
@@ -238,7 +234,7 @@ def create_digraph(ids2ids, start_node='348785149'):
 
 
 def draw_social_graph(graph):
-    '''
+    """
     Draws the "graph".
 
     Paramters
@@ -248,7 +244,7 @@ def draw_social_graph(graph):
     Returns
     -------
     A matplotlib.Axes instance.
-    '''
+    """
 
     fig, ax = plt.subplots(figsize=(20, 20))
 
